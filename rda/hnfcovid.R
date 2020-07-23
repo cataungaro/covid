@@ -70,7 +70,7 @@ p<- tasa_positividad %>%
   geom_point(aes(fecha, positives),alpha=0.5)+
   geom_line (aes(fecha, positives),alpha=0.3)+
   xlab("Fecha")+ ylab("HNF Positivos")+ 
-  ggtitle("Hisopados Positivos por d?a")
+  ggtitle("Hisopados Positivos por día")
 
 
 agrup_sem <- aggregate(tasa_positividad, by= list(
