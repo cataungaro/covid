@@ -97,8 +97,15 @@ hisopados <- covid_ll %>%
                             tests = n())
 
 hisopados %>%
-  ggplot(aes(y=tests, x=fecha)) + 
-  geom_bar(position="stack", stat="identity")
+  ggplot() + 
+  geom_bar(aes(y=tests, x=fecha), 
+           position="stack", stat="identity", 
+           color ="grey", fill="palegreen2")+
+  geom_line(aes(fecha, positivos), color="red")+
+  xlab("Fecha")+ ylab("Hisopados NF")+
+  ggtitle("Hisopados totales y positivos")
+
+ggsave("figs/hisopados_totales_bar.png")
 
 covid_ll %>%
   filter(edad < 100)%>%
